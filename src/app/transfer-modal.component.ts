@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransferFormComponent } from './transfer-form.component';
+import { TransferFormComponent, TransferFormPayload } from './transfer-form.component';
 
 @Component({
   selector: 'reto-bc-transfer-modal',
@@ -7,9 +7,13 @@ import { TransferFormComponent } from './transfer-form.component';
   imports: [TransferFormComponent],
   template: `
     <div>
-      <h2 class="text-3xl">Transferir Fondos</h2>
-      <reto-bc-transfer-form></reto-bc-transfer-form>
+      <h2 class="text-3xl text-center mb-4" style="color: white;">Transferir Fondos</h2>
+      <reto-bc-transfer-form (submitForm)="onTransfer($event)"></reto-bc-transfer-form>
     </div>
   `,
 })
-export class TransferModalComponent {}
+export class TransferModalComponent {
+  onTransfer (payload: TransferFormPayload) {
+    console.log('hola Mundo', payload);
+  }
+}

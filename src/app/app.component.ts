@@ -43,7 +43,7 @@ export class AppComponent {
     this._shyftApiService.getBalance(this._publicKey()?.toBase58()),
   );
   onTransfer () {
-    console.log('hola mundo!');
+    
     this._matDialog.open(TransferModalComponent);
   }
 }
